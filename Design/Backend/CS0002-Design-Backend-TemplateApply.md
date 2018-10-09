@@ -347,7 +347,16 @@ mix.scripts([
 yarn run dev
 ```
 
-### 2. 建立Blade Layout
+### 2. Layout頁面配置
+除了基本的Blade指令來控制資料傳遞進視圖以外，主要是配置一些必要的實作區塊。<br/>
+如此一來，所有繼承該Layout的子頁面就可以透過定義同名的區塊來達到各頁面的差異性。<br/>
+最基本一定含有主內容區塊，這裡來設計出額外三個區塊供子頁面定義自己專屬的CSS、<br/>
+JS以及覆寫CSS。<br/>
+
+ - **@yield('pagecss')**：置放於Html head tag底部，可掛載頁面專屬的CSS定義。
+ - **@yield('overrideCss')**：置放於頁面主內容頂端，可置放一些覆寫原有定義的CSS。
+ - **@yield('content')**： 各頁面的主內容區塊。
+ - **@yield('pagejs')**：置放於Html body tag底部，可掛載頁面專屬的Javascript腳本。
 
 ### 3. 建立可配置選單
 Pendding!!
